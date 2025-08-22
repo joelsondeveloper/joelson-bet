@@ -1,0 +1,38 @@
+/* app/globals.css */
+
+/* 1. Importa todas as funcionalidades base do Tailwind */
+@import "tailwindcss";
+
+@theme {
+  --color-navy-600: #94a3b8;
+  --color-navy-700: #334155;
+  --color-navy-800: #222e41;
+  --color-navy-900: #1a2433;
+
+  --color-slate-50: #ffffff;
+  --color-slate-400: #a0aec0;
+
+  /* Para cores de ação, a variável sem número vira a padrão (ex: bg-accent) */
+  --color-accent: #f2b900;
+  --color-success: #00b894;
+  --color-danger: #d63031;
+}
+
+@layer base {
+  body {
+    /* Agora usamos as classes geradas a partir das nossas variáveis */
+    @apply bg-navy-900 text-slate-50;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-success text-slate-50 font-bold py-2 px-4 rounded transition-colors;
+  }
+  .btn-primary:hover {
+    /* Podemos referenciar outras cores do Tailwind ou nossas próprias */
+    @apply bg-green-600;
+  }
+}
